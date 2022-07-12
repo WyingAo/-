@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h1>我是App组件</h1>
-  </div>
+ <RouterView></RouterView>
 </template>
 <script lang="ts" setup>
 </script>
