@@ -1,6 +1,7 @@
 <template>
    <AppTopnav></AppTopnav>
    <AppHeader></AppHeader>
+   <AppHeaderSticky></AppHeaderSticky>
    <main class="app-body">
     <RouterView></RouterView>
    </main>
@@ -11,6 +12,7 @@
 import AppTopnav from './components/app-topnav.vue'
 import AppHeader from './components/app-header.vue'
 import AppFooter from './components/app-footer.vue'
+import AppHeaderSticky  from'./components/app-header-sticky.vue'
 </script>
 
 <style lang="less" scoped>
