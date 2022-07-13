@@ -10,4 +10,13 @@ export type CategoryItem = {
     picture:string
     children:CategoryItem[],
     open:boolean
+    goods:CategoryGoods[]
 }
+
+export type CategoryGoods = {
+    desc: string
+    id: string
+    name: string
+    picture: string
+    price: string
+  }
