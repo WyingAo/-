@@ -1,11 +1,27 @@
 import {createRouter,createWebHashHistory} from 'vue-router'
 import Layout from '@/views/layout/index.vue'
+import Home from '@/views/home/index.vue'
+import path from 'path'
 const router = createRouter({
     history:createWebHashHistory(),
     routes:[
         {
             path:'/',
-            component:()=>import('@/views/layout/index.vue')
+            component:Layout,
+            children: [
+                {
+                    path:'',
+                    component:Home,
+                },
+                {
+                    path:'category:id',
+                    component:()=>import('@/views/category/index.vue')
+                },
+                {
+                    path:'category/sub:id',
+                    component:()=>import('@/views/category/sub.vue')
+                }
+            ]
         },
         {
             path:'/login',
