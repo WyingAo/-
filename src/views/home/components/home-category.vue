@@ -4,8 +4,23 @@
     <ul class="menu">
       <li v-for="item in category.list" :key="item.id" @mouseenter="categoryId=item.id" :class="{active:categoryId===item.id}">
         <RouterLink :to="`/category/${item.id}`">{{item.name}}</RouterLink>
+        <template v-if="item.children">
         <RouterLink v-for="sub in item.children?.slice(0,2)" :to="`/category/sub/${sub.id}`">{{sub.name}}</RouterLink>
-      </li>
+        </template>
+        <template v-else>
+       <WyaSkeleton  
+        :width="60"
+        :height="18"
+        style="margin-right: 5px"
+        bg="rgba(255,255,255,0.2)"
+        animated />
+        <WyaSkeleton  
+        :width="50"
+        :height="18"
+        bg="rgba(255,255,255,0.2)"
+        animated />
+        </template>
+     </li>
     </ul>
       <div class="layer">
   <h4>分类推荐 <small>根据您的购买或浏览记录推荐</small></h4>
