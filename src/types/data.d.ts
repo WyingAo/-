@@ -20,3 +20,11 @@ export type CategoryGoods = {
     picture: string
     price: string
   }
+
+  // 轮播图类型
+export type BannerItem = {
+    hrefUrl: string
+    id: string
+    imgUrl: string
+    type: string
+  }
