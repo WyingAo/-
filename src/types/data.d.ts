@@ -28,3 +28,19 @@ export type BannerItem = {
     imgUrl: string
     type: string
   }
+
+  // 面板数据类型
+  export interface IGoodItem {
+    desc: string
+    id: string
+    name: string
+    picture: string
+    price: string
+  }
+ 
+  export interface IHotGoods{
+    id: string
+    picture: string
+    title: string
+    alt: string
+  }

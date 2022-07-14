@@ -7,6 +7,8 @@
         <!-- banner轮播图 -->
         <HomeBanner />
       </div>
+      <HomeNew></HomeNew>
+      <HomeHot></HomeHot>
     </div>
   </div>
 </template>
@@ -14,6 +16,8 @@
 <script lang="ts" setup name="Home">
 import HomeBanner from './components/home-banner.vue'
 import HomeCategory from './components/home-category.vue'
+import HomeNew from './components/home-new.vue'
+import HomeHot from './components/home-hot.vue'
 </script>
 
 <style></style>
