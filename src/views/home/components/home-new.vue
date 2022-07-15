@@ -3,6 +3,7 @@
   <div class="home-new">
     <HomePanel title="新鲜好物" sub-title="新鲜出炉 品质靠谱" ref="target">
       <template #right><More path="/" /></template>
+      <Transition name="fade">
       <!-- 面板内容 -->
       <ul class="goods-list">
         <li v-for="item in home.newGoodList" :key="item.id">
@@ -16,6 +17,7 @@
           </RouterLink>
         </li>
       </ul>
+      </Transition>
     </HomePanel>
   </div>
 </template>
