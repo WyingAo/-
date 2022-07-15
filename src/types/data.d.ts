@@ -44,3 +44,14 @@ export type BannerItem = {
     title: string
     alt: string
   }
+
+  export type Brand = {
+    id: string
+    name: string
+    nameEn: string
+    logo: string
+    picture: string
+    type?: any
+    desc: string
+    place: string
+  }

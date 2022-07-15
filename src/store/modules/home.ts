@@ -1,11 +1,12 @@
 import request from '@/utils/request'
 import { defineStore } from 'pinia'
-import { IApiRes,BannerItem, IGoodItem,IHotGoods} from '@/types/data'
+import { IApiRes,BannerItem, IGoodItem,IHotGoods, Brand} from '@/types/data'
 export default defineStore('home',{
     state:()=>({
         bannerList:[] as BannerItem[],
         newGoodList: [] as IGoodItem[],
         hotGoodList:[] as IHotGoods[],
+        brandList:[] as Brand[]
     }),
     actions:{
         async getBannerList(){
@@ -19,6 +20,11 @@ export default defineStore('home',{
         async getHotList(){
             const res = await request.get<IApiRes<IHotGoods[]>>('/home/hot')
             this.hotGoodList = res.data.result
-        }
+        },
+        async getBrandList() {
+            const res = await request.get<IApiRes<Brand[]>>('/home/brand')
+            console.log(res)
+            this.brandList = res.data.result
+          }, 
     }
 })
