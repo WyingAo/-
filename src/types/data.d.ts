@@ -55,3 +55,25 @@ export type BannerItem = {
     desc: string
     place: string
   }
+
+   // 首页商品推荐
+   // 首页商品推荐
+export type HomeProduct = {
+  id: string
+  name: string
+  picture: string
+  saleInfo: string
+  children: {
+    id: string
+    name: string
+  }[]
+  goods: {
+    id: string
+    name: string
+    desc: string
+    price: string
+    picture: string
+    discount?: any
+    orderNum: number
+  }[]
+}
