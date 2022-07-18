@@ -1,6 +1,6 @@
 import {defineStore} from 'pinia'
 
-import { IApiRes,CategoryItem } from '@/types/data'
+import { IApiRes,CategoryItem,TopCategory,SubCategory } from '@/types/data'
 import request from '@/utils/request'
 import {topCategory} from '../constants'
 const defaultCategory = topCategory.map(item=>{
@@ -10,7 +10,9 @@ const defaultCategory = topCategory.map(item=>{
 })
 export default defineStore('category',{
     state:()=>({
-        list:defaultCategory as CategoryItem[]
+        list:defaultCategory as CategoryItem[],
+        topCategory: {} as TopCategory,
+        subCategory:{} as SubCategory
     }),
     actions:{
       async getHeaderNav(){
@@ -29,6 +31,25 @@ export default defineStore('category',{
        hide(id:string){
         const category = this.list.find(item=>item.id===id)
         category!.open=false
-       }
+       },
+        async getTopCategory(id: string) {
+          const res = await request.get<IApiRes<TopCategory>>('/category', {
+            params: {
+              id,
+            },
+          })
+          this.topCategory = res.data.result
+        },
+        async getSubFilter(id:string){
+          const res = await request.get<IApiRes<SubCategory>>(
+            '/category/sub/filter',
+            {
+              params: {
+                id,
+              },
+            }
+          )
+          this.subCategory = res.data.result
+        },
     }
 })

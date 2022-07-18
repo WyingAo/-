@@ -2,7 +2,7 @@
 <template>
   <header class="app-header">
     <div class="container">
-      <h1 class="logo"><RouterLink to="/">小兔鲜</RouterLink></h1>
+      <h1 class="logo"><RouterLink to="/">电商购物</RouterLink></h1>
       <appHeaderNav></appHeaderNav>
       <div class="search">
         <i class="iconfont icon-search"></i>
