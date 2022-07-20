@@ -42,7 +42,7 @@
       </template>
       <div class="form-item">
         <div class="agree">
-          <Checkbox ></Checkbox>
+          <Checkbox v-model="isAgree"></Checkbox>
           <span>我已同意</span>
           <a href="javascript:;">《隐私条款》</a>
           <span>和</span>
@@ -65,8 +65,12 @@
 </template>
 
 <script lang="ts" setup name="LoginForm">
-import { ref } from 'vue';
+import { ref,h,onMounted,render } from 'vue';
 const type = ref<'account' | 'mobile'>('account')
+const vNode = h('h1',{title:'标题',id:'box'},'h1标题')
+onMounted(()=>{
+  render(vNode,document.querySelector('.url')!)
+})
 </script>
 
 <style scoped lang="less">
